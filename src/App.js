@@ -35,7 +35,8 @@ const teamMembers = shuffle([
   "Parker",
   "Brant",
   "Kyle",
-  "Tom"
+  "Tom",
+"Isaac"
 ]);
 
 const TOTAL_SECONDS = 64;
