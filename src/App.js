@@ -129,7 +129,6 @@ function App() {
                 <label htmlFor={t} key={t}>{t}</label>
               </div>))}
           </div>
-          <Timer current={current}/>
         </div>
       </div>
     </>
