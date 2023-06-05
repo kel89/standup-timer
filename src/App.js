@@ -1,6 +1,7 @@
 import Confetti from "react-confetti";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import './App.css'
+import Reaper from './reaper.png'
 
 function shuffle(arr) {
   let currentIndex = arr.length, randomIndex;
@@ -38,66 +39,66 @@ const teamMembers = shuffle([
 "Isaac"
 ]);
 
-// const TOTAL_SECONDS = 64;
-// const LEFT_START = '-400px';
+const TOTAL_SECONDS = 64;
+const LEFT_START = '-400px';
 
-// function Timer({current}) {
-//   const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS);
-//   const [showReaper, setShowReaper] = useState(false);
-//   const [left, setLeft] = useState(LEFT_START);
-//   const [going, setGoing] = useState(false);
-//   useEffect(() => {
-//     setSecondsLeft(TOTAL_SECONDS)
-//     setShowReaper(false)
-//     setLeft(LEFT_START)
-//   }, [current])
-//
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       if (showReaper) {
-//         const leftInt = parseInt(left.split('px')) + 5;
-//         setLeft(`${leftInt}px`)
-//       }
-//     }, 100)
-//     return () => clearInterval(interval)
-//   }, [left, showReaper])
-//
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       if (going) {
-//         setSecondsLeft(secondsLeft > 0 ? secondsLeft - 1 : 0)
-//       }
-//       if (secondsLeft === 0) {
-//         setShowReaper(true)
-//       }
-//     }, 1000);
-//
-//     return () => clearInterval(interval);
-//   }, [going, secondsLeft]);
-//   return (
-//     <>
-//       <div>
-//         <h2 style={{
-//           paddingTop: 0,
-//           marginTop: 0,
-//           color: secondsLeft > 0 ? secondsLeft > 5 ? 'green' : 'orange' : 'red'
-//         }}>{secondsLeft} seconds left</h2>
-//         <button onClick={() => setGoing(!going)}>Start/Stop</button>
-//       </div>
-//       <img src={Reaper} width="300" alt="reaper" style={{
-//         left: left,
-//         display: showReaper ? 'block' : 'none',
-//         transition: '3s position',
-//         position: 'absolute',
-//         top: '0'
-//       }}/>
-//     </>
-//   )
-// }
+function Timer({current}) {
+  const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS);
+  const [showReaper, setShowReaper] = useState(false);
+  const [left, setLeft] = useState(LEFT_START);
+  const [going, setGoing] = useState(false);
+  useEffect(() => {
+    setSecondsLeft(TOTAL_SECONDS)
+    setShowReaper(false)
+    setLeft(LEFT_START)
+  }, [current])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (showReaper) {
+        const leftInt = parseInt(left.split('px')) + 5;
+        setLeft(`${leftInt}px`)
+      }
+    }, 100)
+    return () => clearInterval(interval)
+  }, [left, showReaper])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (going) {
+        setSecondsLeft(secondsLeft > 0 ? secondsLeft - 1 : 0)
+      }
+      if (secondsLeft === 0) {
+        setShowReaper(true)
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [going, secondsLeft]);
+  return (
+    <>
+      <div>
+        <h2 style={{
+          paddingTop: 0,
+          marginTop: 0,
+          color: secondsLeft > 0 ? secondsLeft > 5 ? 'green' : 'orange' : 'red'
+        }}>{secondsLeft} seconds left</h2>
+        <button onClick={() => setGoing(!going)}>Start/Stop</button>
+      </div>
+      <img src={Reaper} width="300" alt="reaper" style={{
+        left: left,
+        display: showReaper ? 'block' : 'none',
+        transition: '3s position',
+        position: 'absolute',
+        top: '0'
+      }}/>
+    </>
+  )
+}
 
 function App() {
   const [display, setDisplay] = useState('none');
-  // const [current, setCurrent] = useState(teamMembers[0])
+  const [current, setCurrent] = useState(teamMembers[0])
   const windowSize = useRef([window.innerWidth, window.innerHeight]);
 
   function showConfetti() {
@@ -108,7 +109,7 @@ function App() {
   }
 
   function handleCheckboxClick(event) {
-    // setCurrent(event.target.value)
+    setCurrent(event.target.value)
   }
 
   return (
@@ -128,6 +129,7 @@ function App() {
                 <label htmlFor={t} key={t}>{t}</label>
               </div>))}
           </div>
+          <Timer current={current}/>
         </div>
       </div>
     </>
