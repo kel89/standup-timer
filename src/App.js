@@ -23,6 +23,7 @@ function shuffle(arr) {
 
 const teamMembers = shuffle([
   "Ben",
+  "Joe",
   "Bryan",
   "Eric",
   "Jay",
