@@ -1,7 +1,7 @@
 import Confetti from "react-confetti";
 import {useEffect, useRef, useState} from "react";
 import './App.css'
-import Reaper from './reaper.png'
+import Reaper from './voldemort.png'
 
 function shuffle(arr) {
   let currentIndex = arr.length, randomIndex;
