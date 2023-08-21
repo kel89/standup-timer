@@ -40,7 +40,7 @@ const teamMembers = shuffle([
 "Isaac"
 ]);
 
-const TOTAL_SECONDS = 56;
+const TOTAL_SECONDS = 14*60/teamMembers.length;
 const LEFT_START = '-400px';
 
 function Timer({current}) {
