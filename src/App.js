@@ -22,6 +22,7 @@ function shuffle(arr) {
 }
 
 const teamMembers = shuffle([
+  "Jake",  
   "Ben",
   "Joe",
   "Bryan",
@@ -109,6 +110,7 @@ function App() {
   }
 
   function handleCheckboxClick(event) {
+    showConfetti();
     setCurrent(event.target.value)
   }
 
@@ -119,7 +121,7 @@ function App() {
         <div className="flex apart">
           <div>
             {teamMembers.map(t => (
-              <div key={t} onClick={showConfetti} style={{padding: 0, margin: 0}}>
+              <div key={t} style={{padding: 0, margin: 0}}>
                 <Confetti
                   style={{display}}
                   width={windowSize[0]}
