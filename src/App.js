@@ -30,6 +30,7 @@ const teamMembers = shuffle([
   "Jay",
   "Jordan",
   "Paulo",
+"Kenny",
   "Steven",
   "Kaylee",
   "Mike",
