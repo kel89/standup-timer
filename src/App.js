@@ -1,10 +1,10 @@
 import Confetti from 'react-confetti'
-import {useRef, useState} from 'react'
+import { useRef, useState } from 'react'
 import './input.css'
 import './App.css'
 import Team from './components/team'
 import Timer from './components/timer'
-import {people, TOTAL_SECONDS} from './utils/constants'
+import { people, TOTAL_SECONDS } from './utils/constants'
 
 function App() {
   const [display, setDisplay] = useState('none')
@@ -21,17 +21,21 @@ function App() {
 
   function handleCheckboxClick(person) {
     showConfetti()
-    person.done = true;
+    person.done = true
     setCurrent(person)
     setSecondsLeft(TOTAL_SECONDS)
   }
 
   return (
     <div className="container mx-auto">
-      <Timer current={current} secondsLeft={secondsLeft} setSecondsLeft={setSecondsLeft}/>
+      <Timer
+        current={current}
+        secondsLeft={secondsLeft}
+        setSecondsLeft={setSecondsLeft}
+      />
       <Team handleCheckboxClick={handleCheckboxClick} current={current} />
       <Confetti
-        style={{display}}
+        style={{ display }}
         width={windowSize[0]}
         height={windowSize[1]}
       />
