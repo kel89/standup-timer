@@ -35,7 +35,7 @@ export default function Example({ handleCheckboxClick, current }) {
 
   return (
     <ul
-      style={{ marginTop: '550px' }}
+      style={{ marginTop: '450px' }}
       className="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
     >
       {teamMembers.map((person, index) => (
@@ -43,7 +43,7 @@ export default function Example({ handleCheckboxClick, current }) {
           key={person.name}
           onClick={() => handleClick(person, index)}
           className={`${
-            index === cur ? 'drop-shadow-xl shadow-xl rounded' : ''
+            index === cur ? 'drop-shadow-xl shadow-xl rounded -z-10' : ''
           } ${
             person.done ? 'bg-gray-800' : ''
           } rounded p-1.5 hover:cursor-pointer`}

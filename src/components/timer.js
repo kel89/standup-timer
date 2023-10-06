@@ -8,6 +8,7 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
   const [showReaper, setShowReaper] = useState(false)
   const [left, setLeft] = useState(LEFT_START)
   const [going, setGoing] = useState(false)
+  const [showList, setShowList] = useState(false);
   useEffect(() => {
     setSecondsLeft(TOTAL_SECONDS)
     setShowReaper(false)
@@ -37,21 +38,21 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
     return () => clearInterval(interval)
   }, [going, secondsLeft, setSecondsLeft])
   return (
-    <>
-      <div className="bg-white pb-24 sm:pb-32 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
+    <div className="relative">
+      <div className="bg-white pb-12 sm:pb-24 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
         <div className="flex apart">
           <h1 className="text-2xl font-bold">standup</h1>
           <a
             href="https://github.com/thall1961/standup"
-            className="text-xl font-bold"
+            className="text-xl font-bold flex flex-col justify-center"
           >
-            github
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" width="20"/>
           </a>
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto">
             <div className="mb-6">
-              <h2 className="text-9xl font-black mt-12 text-center">
+              <h2 className="text-9xl font-black mt-6 text-center">
                 {secondsLeft}
               </h2>
               <p className="text-center">seconds left</p>
@@ -63,6 +64,12 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
           >
             Start/Stop
           </button>
+        </div>
+        <button onClick={() => setShowList(!showList)} className="block mx-auto mt-3 border px-1.5 py-3">Show List</button>
+        <div style={{ height: `${showList ? '100px' : '0'}`, bottom: '-100px'}} className="bg-white rounded shadow left-0 right-0 absolute overflow-hidden">
+          <p className="text-center">Dashboard - review team goals</p>
+          <p className="text-center">Product calendar quick look</p>
+          <p className="text-center">[Monday] Time off calendar quick look</p>
         </div>
       </div>
       <img
@@ -77,6 +84,6 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
           top: '0',
         }}
       />
-    </>
+    </div>
   )
 }
