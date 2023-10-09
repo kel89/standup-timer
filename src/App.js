@@ -4,12 +4,11 @@ import './input.css'
 import './App.css'
 import Team from './components/team'
 import Timer from './components/timer'
-import { people, TOTAL_SECONDS } from './utils/constants'
+import { TOTAL_SECONDS } from './utils/constants'
 
 function App() {
   const [display, setDisplay] = useState('none')
   const [secondsLeft, setSecondsLeft] = useState(0)
-  const [current, setCurrent] = useState(people[0])
   const windowSize = useRef([window.innerWidth, window.innerHeight])
 
   function showConfetti() {
@@ -22,18 +21,16 @@ function App() {
   function handleCheckboxClick(person) {
     showConfetti()
     person.done = true
-    setCurrent(person)
     setSecondsLeft(TOTAL_SECONDS)
   }
 
   return (
     <div className="container mx-auto pb-24">
       <Timer
-        current={current}
         secondsLeft={secondsLeft}
         setSecondsLeft={setSecondsLeft}
       />
-      <Team handleCheckboxClick={handleCheckboxClick} current={current} />
+      <Team handleCheckboxClick={handleCheckboxClick} />
       <Confetti
         style={{ display }}
         width={windowSize[0]}
