@@ -24,7 +24,7 @@ function shuffle(arr) {
 const teamMembers = shuffle(people)
 
 export default function Example({ handleCheckboxClick, current }) {
-  const [cur, setCur] = useState(
+  const [setCur] = useState(
     people.findIndex((person) => person.name === current.name),
   )
 
@@ -35,8 +35,8 @@ export default function Example({ handleCheckboxClick, current }) {
 
   return (
     <ul
-      style={{ marginTop: '450px' }}
-      className="mx-auto grid max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center sm:grid-cols-3 md:grid-cols-4 lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+      style={{ marginTop: '400px' }}
+      className="mx-auto max-w-2xl gap-x-8 gap-y-16 text-center lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
     >
       {teamMembers.map((person, index) => (
         <li
@@ -44,18 +44,10 @@ export default function Example({ handleCheckboxClick, current }) {
           onClick={() => handleClick(person, index)}
           className={`${
             person.done ? 'bg-gray-800' : ''
-          } rounded p-1.5 hover:cursor-pointer`}
+          } rounded p-1.5 hover:cursor-pointer block my-1.5`}
         >
-          <img
-            className="mx-auto h-24 w-24 rounded-full"
-            src={
-              person.imageUrl ??
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png'
-            }
-            alt=""
-          />
           <h3
-            className={`mt-6 text-base font-semibold leading-7 tracking-tight ${
+            className={`py-1.5 text-sm font-semibold leading-7 tracking-tight ${
               person.done ? 'text-white' : 'text-gray-900'
             }`}
           >
