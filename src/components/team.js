@@ -43,8 +43,6 @@ export default function Example({ handleCheckboxClick, current }) {
           key={person.name}
           onClick={() => handleClick(person, index)}
           className={`${
-            index === cur ? 'drop-shadow-xl shadow-xl rounded -z-10' : ''
-          } ${
             person.done ? 'bg-gray-800' : ''
           } rounded p-1.5 hover:cursor-pointer`}
         >
