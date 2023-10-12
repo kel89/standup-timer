@@ -7,7 +7,7 @@ export const people = [
   { done: false, name: 'Jay', role: '', imageUrl: null },
   { done: false, name: 'Jordan', role: '', imageUrl: null },
   { done: false, name: 'Paulo', role: '', imageUrl: null },
-  { done: false, name: 'Kenny', role: '', imageUrl: null },
+  { done: false, name: 'Kenny', role: 'Technoking of Breeze', imageUrl: "assets/a320_transparent.png" },
   { done: false, name: 'Steven', role: '', imageUrl: null },
   { done: false, name: 'Kaylee', role: '', imageUrl: null },
   { done: false, name: 'Mike', role: '', imageUrl: null },

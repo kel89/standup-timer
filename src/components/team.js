@@ -28,6 +28,13 @@ export default function Team({ handleCheckboxClick }) {
           >
             {person.name}
           </span>
+          {
+            person.imageUrl ? (
+              <div className='flex items-center justify-center'>
+                <img className='h-5' src={`${person.imageUrl}`} alt=''/>
+              </div>
+            ) : null
+          }
           <p className="text-sm leading-6 text-gray-600">{person.role}</p>
         </li>
       ))}
