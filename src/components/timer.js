@@ -2,18 +2,15 @@ import { useEffect, useState } from 'react'
 import Reaper from '../voldemort.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
-const LEFT_START = '-400px'
-
-export default function Timer({ secondsLeft, setSecondsLeft }) {
-  const [showReaper, setShowReaper] = useState(false)
-  const [left, setLeft] = useState(LEFT_START)
+export default function Timer({ secondsLeft, setSecondsLeft, showReaper, setShowReaper, LEFT_START, left, setLeft }) {
   const [going, setGoing] = useState(false)
   const [showList, setShowList] = useState(false);
   useEffect(() => {
-    setSecondsLeft(TOTAL_SECONDS)
-    setShowReaper(false)
-    setLeft(LEFT_START)
-  }, [setSecondsLeft])
+      setSecondsLeft(TOTAL_SECONDS)
+      setShowReaper(false)
+      setLeft(LEFT_START)
+    },
+    [LEFT_START, setLeft, setSecondsLeft, setShowReaper])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,7 +20,7 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
       }
     }, 100)
     return () => clearInterval(interval)
-  }, [left, showReaper])
+  }, [left, setLeft, showReaper])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,7 +33,7 @@ export default function Timer({ secondsLeft, setSecondsLeft }) {
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [going, secondsLeft, setSecondsLeft])
+  }, [going, secondsLeft, setSecondsLeft, setShowReaper])
   return (
     <div className="relative">
       <div className="bg-white pb-6 sm:pb-24 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
