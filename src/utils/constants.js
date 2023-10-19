@@ -19,4 +19,4 @@ export const people = [
   { done: false, name: 'Isaac', role: '', imageUrl: null },
 ]
 
-export const TOTAL_SECONDS = 2
+export const TOTAL_SECONDS = Math.round((14 * 60) / people.length)
