@@ -1,5 +1,5 @@
 import {people} from '../utils/constants'
-import {shuffle} from "../utils/utils";
+import {shuffle} from '../utils/utils'
 
 const teamMembers = shuffle(people)
 
@@ -11,7 +11,7 @@ export default function Team({handleCheckboxClick}) {
   return (
     <ul
       style={{marginTop: '400px'}}
-      className="mx-auto max-w-2xl gap-x-8 gap-y-16 text-center lg:mx-0 lg:max-w-none lg:grid-cols-5 xl:grid-cols-6"
+      className="mx-auto max-w-xs gap-x-8 gap-y-16 text-center grid-cols-1"
     >
       {teamMembers.map((person) => (
         <li
@@ -19,25 +19,19 @@ export default function Team({handleCheckboxClick}) {
           onClick={() => handleClick(person)}
           className={`${
             person.done ? 'bg-gray-800' : 'hover:bg-blue-50'
-          } rounded p-1.5 hover:cursor-pointer block my-1.5`}
+          } rounded p-1.5 hover:cursor-pointer block my-1.5 flex items-center`}
         >
-          <div className="flex justify-center items-center">
-            {
-              person.imageUrl ? (
-                <div className='flex items-center justify-center'>
-                  <img className='h-5' src={`${person.imageUrl}`} alt=''/>
-                </div>
-              ) : null
-            }
-            <span
-              className={`ml-3 text-md font-semibold leading-7 tracking-tight ${
-                person.done ? 'text-white' : 'text-gray-900'
-              }`}
-            >
+          <div className="w-12">
+            {person.imageUrl && <img className={`h-8 w-8 border rounded-full ${person.done ? 'border-white' : 'text-gray-900'}`} src={`${person.imageUrl}`} alt=""/>}
+          </div>
+          <span
+            className={`mr-3 text-2xl font-bold tracking-tight ${
+              person.done ? 'text-white' : 'text-gray-900'
+            }`}
+          >
             {person.name}
           </span>
-          </div>
-          <p className="text-xs uppercase text-gray-900">{person.role}</p>
+          <span className={`inline-block ml-auto pr-3 text-xs uppercase text-gray-900 ${person.done ? 'text-white' : 'text-gray-900'}`}>{person.role}</span>
         </li>
       ))}
     </ul>

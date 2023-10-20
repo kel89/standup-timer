@@ -26,7 +26,7 @@ function App() {
     showConfetti()
     person.done = true
     setSecondsLeft(TOTAL_SECONDS)
-    setShowReaper(false);
+    setShowReaper(false)
     setLeft(LEFT_START)
   }
 
