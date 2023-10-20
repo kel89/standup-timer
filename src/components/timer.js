@@ -2,15 +2,22 @@ import { useEffect, useState } from 'react'
 import Reaper from '../voldemort.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
-export default function Timer({ secondsLeft, setSecondsLeft, showReaper, setShowReaper, LEFT_START, left, setLeft }) {
+export default function Timer({
+  secondsLeft,
+  setSecondsLeft,
+  showReaper,
+  setShowReaper,
+  LEFT_START,
+  left,
+  setLeft,
+}) {
   const [going, setGoing] = useState(false)
-  const [showList, setShowList] = useState(false);
+  const [showList, setShowList] = useState(false)
   useEffect(() => {
-      setSecondsLeft(TOTAL_SECONDS)
-      setShowReaper(false)
-      setLeft(LEFT_START)
-    },
-    [LEFT_START, setLeft, setSecondsLeft, setShowReaper])
+    setSecondsLeft(TOTAL_SECONDS)
+    setShowReaper(false)
+    setLeft(LEFT_START)
+  }, [LEFT_START, setLeft, setSecondsLeft, setShowReaper])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,7 +50,11 @@ export default function Timer({ secondsLeft, setSecondsLeft, showReaper, setShow
             href="https://github.com/thall1961/standup"
             className="text-xl font-bold flex flex-col justify-center"
           >
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="" width="20"/>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+              alt=""
+              width="20"
+            />
           </a>
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -62,8 +73,16 @@ export default function Timer({ secondsLeft, setSecondsLeft, showReaper, setShow
             Start/Stop
           </button>
         </div>
-        <button onClick={() => setShowList(!showList)} className="block mx-auto mt-3 border p-1.5 text-sm">Show List</button>
-        <div style={{ height: `${showList ? '100px' : '0'}`, bottom: '-100px'}} className="bg-white rounded shadow left-0 right-0 absolute overflow-hidden">
+        <button
+          onClick={() => setShowList(!showList)}
+          className="block mx-auto mt-3 border p-1.5 text-sm"
+        >
+          Show List
+        </button>
+        <div
+          style={{ height: `${showList ? '100px' : '0'}`, bottom: '-100px' }}
+          className="bg-white rounded shadow left-0 right-0 absolute overflow-hidden"
+        >
           <p className="text-center">Dashboard - review team goals</p>
           <p className="text-center">Product calendar quick look</p>
           <p className="text-center">[Monday] Time off calendar quick look</p>
