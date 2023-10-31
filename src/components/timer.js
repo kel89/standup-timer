@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../voldemort.png'
+import Reaper from '../jack.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
 export default function Timer({
@@ -67,7 +67,7 @@ export default function Timer({
             </div>
           </div>
           <button
-            className="bg-indigo-500 block mx-auto w-200 text-white text-xl mt-5 py-8 px-12 rounded shadow hover:bg-indigo-900 hover:shadow-xl transition"
+            className="bg-orange-500 block mx-auto w-200 text-white text-xl mt-5 py-8 px-12 rounded shadow-xl hover:bg-orange-900 hover:shadow-xl transition"
             onClick={() => setGoing(!going)}
           >
             Start/Stop
