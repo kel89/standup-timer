@@ -67,7 +67,7 @@ export default function Timer({
             </div>
           </div>
           <button
-            className="bg-orange-500 block mx-auto w-200 text-white text-xl mt-5 py-8 px-12 rounded shadow-xl hover:bg-orange-900 hover:shadow-xl transition"
+            className="bg-teal-500 block mx-auto w-200 text-white text-xl mt-5 py-8 px-12 rounded shadow-xl hover:bg-teal-900 hover:shadow-xl transition"
             onClick={() => setGoing(!going)}
           >
             Start/Stop
