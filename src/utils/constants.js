@@ -16,7 +16,7 @@ export const people = [
   { done: false, name: 'Steven', role: '', imageUrl: null },
   { done: false, name: 'Kaylee', role: '', imageUrl: null },
   { done: false, name: 'Mike', role: '', imageUrl: null },
-  { done: false, name: 'Jeremy', role: '', imageUrl: null },
+  { done: false, name: 'Jeremy', role: 'The Dwayne Johnson of Design', imageUrl: null },
   { done: false, name: 'Parker', role: '', imageUrl: null },
   { done: false, name: 'Brant', role: '', imageUrl: null },
   { done: false, name: 'Kyle', role: '', imageUrl: null },
