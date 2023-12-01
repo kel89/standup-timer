@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../jack.png'
+import Reaper from '../krampus.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
 export default function Timer({
@@ -12,7 +12,6 @@ export default function Timer({
   setLeft,
 }) {
   const [going, setGoing] = useState(false)
-  const [showList, setShowList] = useState(false)
   useEffect(() => {
     setSecondsLeft(TOTAL_SECONDS)
     setShowReaper(false)
@@ -43,7 +42,7 @@ export default function Timer({
   }, [going, secondsLeft, setSecondsLeft, setShowReaper])
   return (
     <div className="relative">
-      <div className="bg-white pb-6 sm:pb-24 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
+      <div className="bg-white sm:pb-6 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
         <div className="flex apart">
           <h1 className="text-2xl font-bold">standup</h1>
           <a
@@ -63,7 +62,6 @@ export default function Timer({
               <h2 className="text-9xl font-black mt-3 text-center">
                 {secondsLeft}
               </h2>
-              <p className="text-center">seconds left</p>
             </div>
           </div>
           <button
@@ -73,20 +71,7 @@ export default function Timer({
             Start/Stop
           </button>
         </div>
-        <button
-          onClick={() => setShowList(!showList)}
-          className="block mx-auto mt-3 border p-1.5 text-sm"
-        >
-          Show List
-        </button>
-        <div
-          style={{ height: `${showList ? '100px' : '0'}`, bottom: '-100px' }}
-          className="bg-white rounded shadow left-0 right-0 absolute overflow-hidden"
-        >
-          <p className="text-center">Dashboard - review team goals</p>
-          <p className="text-center">Product calendar quick look</p>
-          <p className="text-center">[Monday] Time off calendar quick look</p>
-        </div>
+        <a href="https://adventofcode.com/2023/day/1" className="mx-auto block text-center my-6 underline">🎄GET YOUR ADVENT OF CODE ON <span className="inline-block -rotate-45 ml-1.5">&rarr;</span></a>
       </div>
       <img
         src={Reaper}
