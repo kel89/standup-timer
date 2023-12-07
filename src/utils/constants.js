@@ -14,7 +14,6 @@ export const people = [
     imageUrl: 'assets/a320_transparent.png',
   },
   { done: false, name: 'Steven', role: '', imageUrl: null },
-  { done: false, name: 'Kaylee', role: '', imageUrl: null },
   { done: false, name: 'Mike', role: '', imageUrl: null },
   { done: false, name: 'Jeremy', role: '', imageUrl: null },
   { done: false, name: 'Parker', role: '', imageUrl: null },
