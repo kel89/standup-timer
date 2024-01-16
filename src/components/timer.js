@@ -71,7 +71,6 @@ export default function Timer({
             Start/Stop
           </button>
         </div>
-        <a href="https://adventofcode.com/2023/day/1" className="mx-auto block text-center my-6 underline">🎄GET YOUR ADVENT OF CODE ON <span className="inline-block -rotate-45 ml-1.5">&rarr;</span></a>
       </div>
       <img
         src={Reaper}
