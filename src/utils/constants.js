@@ -7,7 +7,6 @@ export const people = [
   { done: false, name: 'Jay', role: '', imageUrl: null },
   { done: false, name: 'Jordan', role: '', imageUrl: null },
   { done: false, name: 'Paulo', role: '', imageUrl: null },
-  { done: false, name: 'Kaylee', role: '', imageUrl: null },
   {
     done: false,
     name: 'Kenny',
