@@ -10,7 +10,7 @@ export default function Team({handleCheckboxClick}) {
 
   return (
     <ul
-      style={{marginTop: '400px'}}
+      style={{marginTop: '320px'}}
       className="mx-auto max-w-xs gap-x-8 gap-y-16 text-center grid-cols-1"
     >
       {teamMembers.map((person) => (
