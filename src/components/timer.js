@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../krampus.png'
+import Reaper from '../ganondorf.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
 export default function Timer({
