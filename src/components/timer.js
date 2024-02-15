@@ -70,6 +70,7 @@ export default function Timer({
           >
             Start/Stop
           </button>
+          <a href="https://app.clickup.com/2277049/dashboards/25fnt-1410" target="_blank" rel="noreferrer" className="text-teal-500 mt-6 text-xl font-bold uppercase block mx-auto text-center">dashboard</a>
         </div>
       </div>
       <img
