@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../ganondorf.png'
+import Reaper from '../sonic.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
 export default function Timer({
@@ -42,9 +42,9 @@ export default function Timer({
   }, [going, secondsLeft, setSecondsLeft, setShowReaper])
   return (
     <div className="relative">
-      <div className="bg-white sm:pb-6 px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
+      <div className="bg-white px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
         <div className="flex apart">
-          <h1 className="text-2xl font-bold">standup</h1>
+          <h1 className="text-2xl font-bold">stand<u>up</u></h1>
           <a
             href="https://github.com/thall1961/standup"
             className="text-xl font-bold flex flex-col justify-center"
@@ -65,12 +65,12 @@ export default function Timer({
             </div>
           </div>
           <button
-            className="bg-teal-500 block mx-auto w-200 text-white text-xl mt-5 py-8 px-12 rounded shadow-xl hover:bg-teal-900 hover:shadow-xl transition"
+            className="bg-teal-500 block mx-auto w-200 font-black text-white text-sm mt-5 py-2 px-6 rounded shadow-xl hover:bg-teal-900 hover:shadow-xl transition uppercase"
             onClick={() => setGoing(!going)}
           >
-            Start/Stop
+            toggle
           </button>
-          <a href="https://app.clickup.com/2277049/dashboards/25fnt-1410" target="_blank" rel="noreferrer" className="text-teal-500 mt-6 text-xl font-bold uppercase block mx-auto text-center">dashboard</a>
+          <a href="https://app.clickup.com/2277049/dashboards/25fnt-1410" target="_blank" rel="noreferrer" className="text-teal-500 mt-3 text-sm font-bold uppercase block mx-auto text-center">dashboard &rarr;</a>
         </div>
       </div>
       <img
