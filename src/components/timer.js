@@ -46,7 +46,7 @@ export default function Timer({
         <div className="flex apart">
           <h1 className="text-2xl font-bold">stand<u>up</u></h1>
           <a
-            href="https://github.com/thall1961/standup"
+            href="https://github.com/thall1961/standup-timer"
             className="text-xl font-bold flex flex-col justify-center"
           >
             <img
