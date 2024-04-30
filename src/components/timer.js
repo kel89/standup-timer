@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../sonic.png'
+import Reaper from '../voldemort.png'
 import { TOTAL_SECONDS } from '../utils/constants'
 
 export default function Timer({
