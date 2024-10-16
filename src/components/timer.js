@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Reaper from '../voldemort.png'
 import { TOTAL_SECONDS } from '../utils/constants'
+import Reaper from '../voldemort.png'
 
 export default function Timer({
   secondsLeft,
@@ -45,16 +45,6 @@ export default function Timer({
       <div className="bg-white px-6 sm:px-12 fixed top-0 w-full border-bottom shadow-xl left-0 right-0">
         <div className="flex apart">
           <h1 className="text-2xl font-bold">stand<u>up</u></h1>
-          <a
-            href="https://github.com/thall1961/standup-timer"
-            className="text-xl font-bold flex flex-col justify-center"
-          >
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-              alt=""
-              width="20"
-            />
-          </a>
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-6">
           <div className="mx-auto">
