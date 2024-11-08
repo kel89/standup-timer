@@ -22,9 +22,8 @@ function App() {
     }, 1000)
   }
 
-  function handleCheckboxClick(person) {
+  function handleCheckboxClick() {
     showConfetti()
-    person.done = true
     setSecondsLeft(TOTAL_SECONDS)
     setShowReaper(false)
     setLeft(LEFT_START)

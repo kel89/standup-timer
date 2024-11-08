@@ -1,11 +1,20 @@
-import {people} from '../utils/constants'
-import {shuffle} from '../utils/utils'
+import { useEffect, useState } from 'react';
+import { people } from '../utils/constants';
+import { shuffle } from '../utils/utils';
 
 const teamMembers = shuffle(people)
 
 export default function Team({handleCheckboxClick}) {
+  const [allDone, setAllDone] = useState(false);
+  const [members, setMembers] = useState(teamMembers);
+  
+  useEffect(() => {
+    setAllDone(members.every(person => person.done))
+  }, [members])
+
   function handleClick(person) {
-    handleCheckboxClick(person)
+    setMembers(members.map(p => p.name === person.name ? {...p, done: true} : p));
+    handleCheckboxClick();
   }
 
   return (
@@ -13,7 +22,8 @@ export default function Team({handleCheckboxClick}) {
       style={{marginTop: '320px'}}
       className="mx-auto max-w-xs gap-x-8 gap-y-16 text-center grid-cols-1"
     >
-      {teamMembers.map((person) => (
+      {allDone && <h1 className="text-black text-2xl font-bold">All done! Check Code Reviews</h1>}
+      {members.map((person) => (
         <li
           key={person.name}
           onClick={() => handleClick(person)}
