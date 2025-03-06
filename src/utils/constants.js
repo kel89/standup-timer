@@ -5,7 +5,7 @@ export const people = [
   { done: false, name: 'Jace', role: '', imageUrl: null },
   { done: false, name: 'Ben', role: '', imageUrl: null },
   { done: false, name: 'Gui', role: '', imageUrl: null },
-  { done: false, name: 'Jay', role: '', imageUrl: null },
+  { done: false, name: 'Jay', role: 'Solvem Probler', imageUrl: 'https://media.istockphoto.com/id/545564856/photo/the-young-man-with-magnifying-glass.jpg?s=612x612&w=0&k=20&c=f5BfXJQV4HQ-gifbAY8oex5OhU-bYRjyECLzXyFLhpU=' },
   { done: false, name: 'Jordan', role: '', imageUrl: null },
   {
     done: false,
