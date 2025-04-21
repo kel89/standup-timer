@@ -11,7 +11,7 @@ export const people = [
   {
     done: false,
     name: 'Kenny',
-    role: 'Technoking of Breeze',
+    role: '',
     imageUrl: 'assets/a320_transparent.png',
   },
   { done: false, name: 'Mike', role: '', imageUrl: null },
