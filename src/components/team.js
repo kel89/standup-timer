@@ -35,13 +35,13 @@ export default function Team({handleCheckboxClick}) {
             {person.imageUrl && <img className={`h-8 w-8 border rounded-full ${person.done ? 'border-white' : 'text-gray-900'}`} src={`${person.imageUrl}`} alt=""/>}
           </div>
           <span
-            className={`mr-3 text-2xl font-bold tracking-tight ${
+            className={`mr-3 text-2xl font-bold tracking-tight rext-ri ${
               person.done ? 'text-white' : 'text-gray-900'
             }`}
           >
             {person.name}
           </span>
-          <span className={`inline-block ml-auto pr-3 text-xs uppercase text-gray-900 ${person.done ? 'text-white' : 'text-gray-900'}`}>{person.role}</span>
+          <span className={`inline-block ml-auto pr-3 text-xs uppercase text-gray-900 text-right ${person.done ? 'text-white' : 'text-gray-900'}`}>{person.role}</span>
         </li>
       ))}
     </ul>
