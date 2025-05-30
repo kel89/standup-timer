@@ -1,5 +1,4 @@
 export const people = [
-{ done: false, name: 'Daniel', role: '', imageUrl: null },  
   { done: false, name: 'Daniel', role: '', imageUrl: null },
 { done: false, name: 'Alyssa', role: '', imageUrl: null },
   { done: false, name: 'Marco', role: '', imageUrl: null },
